@@ -9,11 +9,11 @@ public class CalculadoraDeDescontos {
     public BigDecimal calcular(Orcamento orcamento) {
 
         // Nesse ponto ele instancia a classe que será executada
-        Desconto desconto = new DescontoParaOrcamentoComMaisDeCincoItens(
+        Desconto cadeiaDeDescontos = new DescontoParaOrcamentoComMaisDeCincoItens(
                 new DescontoParaOrcamentoComValorMaiorQueQuinhentos(new SemDesconto())
         );
 
         // Nesse ponto ele executa.
-        return desconto.calcular(orcamento);
+        return cadeiaDeDescontos.calcular(orcamento);
     }
 }
